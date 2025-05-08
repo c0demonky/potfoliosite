@@ -1,48 +1,40 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import red from "./assets/red.svg";
+import green from "./assets/green.svg";
+import blue from "./assets/blue.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return (
+    return (
     <body>
       <div class="topnav">
-        <a href="https://github.com/c0demonky" target="_blank">
-          My Github
+        <h3>Tariq's Portfolio Site</h3>
+      </div>
+
+      <div className="content">
+       <h1>Welcome to my (simple) website</h1>
+       <div className="card">
+	<a href="https://github.com/c0demonky" target="_blank">
+ <img src={green} className="icon" alt="Green Folder" />          
+<p>My Github</p>
         </a>
+	</div>
+	<div className="card">
         <a
           href="https://linkedin.com/in/tariq-alkhalaileh-14737a152/"
           target="_blank"
         >
-          Connect on LinkedIn!
+	 <img src={blue} className="icon" alt="Blue Folder" />
+          <p>Connect on LinkedIn!</p>
         </a>
+</div>
+	<div className="card">
         <a href="https://kaggle.com/talk021" target="_blank">
-          ML fun
+	 <img src={red} className="icon" alt="Red Folder" />
+		<p>ML fun</p>
         </a>
       </div>
-
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+	</div>
     </body>
   );
 }

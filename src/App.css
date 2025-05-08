@@ -1,59 +1,67 @@
+@font-face {
+ font-family: roboto;
+ src: url(./assets/Roboto-Regular.ttf);
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: roboto;
+}
+
+body {
+ background-color: #FAF9F6;
 }
 
 .topnav {
-background-color: #333;
+background: linear-gradient(45deg, #343434, #36454F, #343434);
+background-size: 400% 400%;
 overflow: hidden;
 position: fixed;
 top: 0;
 left: 0;
-width: 100%
+width: 100%;
+height: 100px;
+font-size: 24px;
+animation: gradient 15s ease infinite;
+} 
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
-.topnav a {
-display: inline-block;
-text-align: center;
-padding: 1em;
-font-size: 18px;
-color: #F5FEFD
+h1 {
+color: #343434;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.content a p {
+font-size: 24px;
+color: #343434;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon {
+  height: 12em;
+  padding: 1em;
+  transition: all 0.5s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.icon:hover {
+  transform: scale(1.25);
+  
 }
 
 .card {
-  padding: 2em;
+  padding: 4em;
+display: inline-block
 }
 
-.read-the-docs {
-  color: #888;
-}
