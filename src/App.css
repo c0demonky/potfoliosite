@@ -16,7 +16,7 @@ body {
 }
 
 .topnav {
-background: linear-gradient(45deg, #343434, #36454F, #343434);
+background: linear-gradient(45deg, #343434,  #343434,  silver,  #343434, #343434);
 background-size: 400% 400%;
 overflow: hidden;
 position: fixed;
@@ -25,7 +25,8 @@ left: 0;
 width: 100%;
 height: 100px;
 font-size: 24px;
-animation: gradient 15s ease infinite;
+animation: gradient 20s ease infinite;
+color: #FAF9F6
 } 
 
 @keyframes gradient {
@@ -41,11 +42,6 @@ animation: gradient 15s ease infinite;
 }
 
 h1 {
-color: #343434;
-}
-
-.content a p {
-font-size: 24px;
 color: #343434;
 }
 
@@ -65,3 +61,14 @@ color: #343434;
 display: inline-block
 }
 
+.card a p {
+font-size: 24px;
+color: #343434;
+}
+
+button {
+	display: inline-block;
+	background-color: #343434;
+	color:  #FAF9F6;
+	padding: .3em;  
+}

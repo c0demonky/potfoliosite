@@ -4,39 +4,60 @@ import green from "./assets/green.svg";
 import blue from "./assets/blue.svg";
 import "./App.css";
 
-function App() {
-    return (
-    <body>
-      <div class="topnav">
-        <h3>Tariq's Portfolio Site</h3>
-      </div>
-
-      <div className="content">
-       <h1>Welcome to my (simple) website</h1>
-       <div className="card">
-	<a href="https://github.com/c0demonky" target="_blank">
- <img src={green} className="icon" alt="Green Folder" />          
-<p>My Github</p>
-        </a>
-	</div>
-	<div className="card">
-        <a
-          href="https://linkedin.com/in/tariq-alkhalaileh-14737a152/"
-          target="_blank"
-        >
-	 <img src={blue} className="icon" alt="Blue Folder" />
-          <p>Connect on LinkedIn!</p>
-        </a>
-</div>
-	<div className="card">
-        <a href="https://kaggle.com/talk021" target="_blank">
-	 <img src={red} className="icon" alt="Red Folder" />
-		<p>ML fun</p>
-        </a>
-      </div>
-	</div>
-    </body>
+function Card({ url, asset, alt_desc, info }) {
+  return (
+    <div className="card">
+      <a href={url} target="_blank">
+        <img src={asset} className="icon" alt={alt_desc} />
+        <p>{info}</p>
+      </a>
+    </div>
   );
 }
+
+function Topnav({mytitle}) {
+	
+return(
+	<div class="topnav">
+        <h3>{mytitle}</h3>
+      </div>
+);
+}
+
+function Body({descriptors}) {	
+const [descriptor, setDescriptor] = useState(descriptors[0]);
+return(
+	<body>
+	<Topnav mytitle={"Tariq's Portfolio"}/>
+        <h1>Welcome to my <button onClick={() => setDescriptor(descriptors[Math.floor(Math.random() * descriptors.length)])}>({descriptor})</button> website</h1>
+        <Card
+          url={"https://github.com/c0demonky"}
+          asset={green}
+          alt_desc={"Green Folder"}
+          info={"Github"}
+        />
+        <Card
+          url={"https://kaggle.com/talk021"}
+          asset={red}
+          alt_desc={"Red Folder"}
+          info={"Kaggle"}
+        />
+        <Card
+          url={"https://linkedin.com/in/tariq-alkhalaileh-14737a152/"}
+          asset={blue}
+          alt_desc={"Blue Folder"}
+          info={"LinkedIn"}
+        />
+	</body>
+);
+
+}
+function App() {
+  return (
+    <Body descriptors={DESCRIPTORS}/>
+  );
+}
+
+const DESCRIPTORS = ['simple', 'basic', 'elementary', 'uncomplicated', 'easy', 'manageable'];
 
 export default App;
